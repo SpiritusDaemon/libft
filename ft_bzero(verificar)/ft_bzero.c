@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarques <gmarques@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/29 23:17:33 by gmarques          #+#    #+#             */
-/*   Updated: 2022/07/29 23:17:33 by gmarques         ###   ########.fr       */
+/*   Created: 2022/08/06 10:53:07 by gmarques          #+#    #+#             */
+/*   Updated: 2022/08/06 10:53:07 by gmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <strings.h>
 #include <stdio.h>
-int ft_isprint(int charint);
 
-int ft_isprint(int charint)
+void ft_bzero(void *s, size_t n);
+
+void ft_bzero(void *s, size_t n)
 {
-   unsigned char alpha;
+	size_t i;
+	char *ptr;
 
-    alpha = charint;
-    if(alpha >= 1 && alpha <= 127)
-        return (charint);
-     return (0);
+	i = 0;
+	ptr = s;
+	while(i < n)
+	{
+		ptr[i] = '\0';
+		i++;
+	}
 }
 
-/* int main(void)
+int main(void)
 {
-	char str = 's';
-	printf("%d\n", ft_isprint((int)str));
-	return (0);
-} */
+	int i = 7;
+	char arr[] = "This is bzero library function";
+	printf("%s\n", arr);
+	ft_bzero(arr, i);
+	printf("%s\n", arr);
+
+
+}
