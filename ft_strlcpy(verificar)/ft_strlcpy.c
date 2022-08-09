@@ -7,13 +7,13 @@ unsigned int ft_strlcpy(char *dest, const char *src, unsigned int size)
 	unsigned int i;
 
 	i = 0;
-	while (i < size - 1)
+	while (i < size)
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return(size - 1);
+	return(i - 1);
 }
 
 int ft_strlen(char *str);
@@ -31,7 +31,7 @@ int ft_strlen(char *str)
 int main(void)
 {
 	char src[] = "misso";
-	char *dest;
+	char dest[] = "testa";
 	unsigned int size;
 
 	size = ft_strlen(dest);
