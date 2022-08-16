@@ -1,7 +1,7 @@
-CC = gcc
+CC = @gcc
 FLAGS = -Wall -Wextra -Werror
 PROGRAM = ft_memcmp.c
-RUN = ./a.out
+RUN = @./a.out
 
 all:
 		clear
