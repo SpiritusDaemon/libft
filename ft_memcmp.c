@@ -33,7 +33,7 @@ int ft_memcmp(const void *str1, const void *str2, size_t n)
 	return (!!temp);
 }
 
-int main(void)
+/* int main(void)
 {
 	char str1[] = "testaaaaaaaaaaaaaaaaaaaaa";
 	char str2[] = "testaaaaaaaaaaaaaaaaaaaaa";
@@ -42,7 +42,7 @@ int main(void)
 	printf("%s\n", str2);
 	printf("%d\n",ft_memcmp(str1, str2, n));
 	printf("%d\n",memcmp(str1, str2, n));
-}
+} */
 
 
 
