@@ -10,16 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-int ft_isalnum(int charint);
+#include "libft.h"
 
-int ft_isalnum(int charint)
+int ft_isalnum(int c)
 {
-    char alpha;
-
-    alpha = charint;
-    if((alpha >= 65 && alpha <= 90) || (alpha >= 97 && alpha <= 122) || (alpha >= 48 && alpha <= 57))
-        return (charint);
+    if((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
+        return (c);
     return (0);
 }
 

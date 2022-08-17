@@ -10,16 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-int ft_isdigit(int charint);
+#include "libft.h"
 
-int ft_isdigit(int charint)
+int ft_isdigit(int c)
 {
-    char alpha;
-
-    alpha = charint;
-    if(alpha >= 48 && alpha <= 57)
-        return (charint);
+    if(c >= 48 && c <= 57)
+        return (c);
      return (0);
 }
 

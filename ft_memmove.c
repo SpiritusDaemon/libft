@@ -6,14 +6,11 @@
 /*   By: gmarques <gmarques@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 11:51:49 by gmarques          #+#    #+#             */
-/*   Updated: 2022/08/15 23:07:43 by gmarques         ###   ########.fr       */
+/*   Updated: 2022/08/17 20:30:42 by gmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-void *ft_memmove(void *dest, const void *src, size_t n);
+#include "libft.h"
 
 void *ft_memmove(void *dest, const void *src, size_t n)
 {

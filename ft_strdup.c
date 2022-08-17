@@ -10,20 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int ft_strlen(char *str)
-{
-	unsigned int i;
-
-	i = 0;
-	while(str[i])
-		i++;
-	return (i);
-}
-char *ft_strdup(const char *s);
+#include "libft.h"
 
 char *ft_strdup(const char *s)
 {

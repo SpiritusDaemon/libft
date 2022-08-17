@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-int ft_tolower(int alpha);
+#include "libft.h"
 
-int ft_tolower(int alpha)
+int ft_tolower(int c)
 {
-	if(alpha >= 'A' && alpha <= 'Z')
-		return(alpha + 32);
-	return((char)alpha);
+	if(c >= 'A' && c <= 'Z')
+		return(c + 32);
+	return(c);
 }
 
 

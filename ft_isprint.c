@@ -10,15 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-int ft_isprint(int c);
+#include "libft.h"
 
 int ft_isprint(int c)
 {
-   unsigned char alpha;
-
-    alpha = c;
-    if(alpha >= 1 && alpha <= 127)
+    if(c >= 1 && c <= 127)
         return (c);
      return (0);
 }

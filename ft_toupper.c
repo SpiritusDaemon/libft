@@ -13,11 +13,11 @@
 #include <stdio.h>
 int ft_toupper(int alpha);
 
-int ft_toupper(int alpha)
+int ft_toupper(int c)
 {
-	 if(alpha >= 'a' && alpha <= 'z')
-		alpha -= 32;
-	return((char)alpha);
+	 if(c >= 'a' && c <= 'z')
+		c -= 32;
+	return(c);
 
 }
 

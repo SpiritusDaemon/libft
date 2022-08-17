@@ -10,16 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-int ft_isalpha(int charint);
+#include "libft.h"
 
-int ft_isalpha(int charint)
+int ft_isalpha(int c)
 {
-    char alpha;
-
-    alpha = charint;
-    if((alpha >= 65 && alpha <= 90) || (alpha >= 97 && alpha <= 122))
-        return (charint);
+    if((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+        return (c);
     return (0);
 }
 
