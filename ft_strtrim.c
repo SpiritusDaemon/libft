@@ -30,7 +30,7 @@ char *ft_strtrim(char const *s1, char const *set)
 		{
 			if(s1[e] == set[j])
 				e++;
-			if(s1[e] != set[j])
+			else if(s1[e] != set[j])
 				j++;
 		}
 		temp[i++] = s1[e++];
@@ -39,3 +39,10 @@ char *ft_strtrim(char const *s1, char const *set)
 	temp[i] = '\0';
 	return(temp);
 }
+
+/* int main(void)
+{
+	char s1[] = "abcdefabc";
+	char set[] = "abc";
+	printf("%s\n", ft_strtrim(s1, set));
+} */

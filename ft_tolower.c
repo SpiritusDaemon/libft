@@ -15,14 +15,14 @@
 int ft_tolower(int c)
 {
 	if(c >= 'A' && c <= 'Z')
-		return(c + 32);
+		c += 32;
 	return(c);
 }
 
 
 /* int main(void)
 {
-	char str = 'Z';
+	char str = 'A';
 	printf("%c\n", ft_tolower((int)str));
 	return (0);
 }

@@ -12,12 +12,16 @@
 
 #include "libft.h"
 
-/* COPY FUNC TESTS DOWN BELOW */ /* testing ft_strtrim.c */
+/* COPY FUNC TESTS DOWN BELOW */ /* testing ft_split.c */
 
 int main(void)
 {
-	char s1[] = "abcdefabc";
-	char set[] = "abc";
-	printf("%s\n", ft_strtrim(s1, set));
-}
+	char s[] = "grandesctestes";
+	char c = 'c';
+	char **func = ft_split(s, c);
 
+	printf("%s\n", func[0]);
+	printf("%s\n", func[1]);
+
+	return (0);
+}
