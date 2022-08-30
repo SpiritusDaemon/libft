@@ -15,11 +15,12 @@
 static int count_size(int n)
 {
 	int i;
+
+	i = 0;
 	while (n != 0)
 	{
 		n /= 10;
 		i++;
-
 	}
 	return(i);
 }
@@ -27,19 +28,20 @@ static int count_size(int n)
 char *ft_itoa(int n)
 {
 	int count;
-	int i;
 
-	i = 0;
 	count = count_size(n);
 	char *t_itoa = malloc(count + 1 * sizeof(char));
+	t_itoa[count] = '\0';
 	while (count > 0)
 	{
+		t_itoa[--count] = n % 10 + '0';
 		n /= 10;
-		t_itoa[i] = n % 10 - '0';
-		i++;
-		count--;
 	}
-	t_itoa[i] = '\0';
 	return(t_itoa);
 }
 
+/* int main(void)
+{
+	int i = 50142;
+	printf("%s\n", ft_itoa(i));
+} */
