@@ -66,13 +66,12 @@ static char *second_part(char *s, int i, char *string_2)
 
 char **ft_split(char const *s, char c)
 {
-	int j;
 	int i;
-	j = char_exist((char *)s, c);
-	if(j != 1 || !s)
+	i = char_exist((char *)s, c);
+	if(i != 1 || !s)
 		return(NULL);
 	i = limit((char *)s, c);
-	char *string_1 = malloc(i + 1);
+	char *string_1 = malloc(i + 1 * (sizeof(char)));
 	char *string_2 = malloc(ft_strlen((char *)s) - i);
 	string_1 = first_part((char *)s, string_1, c);
 	string_2 = second_part((char *)s, i, string_2);

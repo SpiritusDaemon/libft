@@ -24,7 +24,7 @@ void *ft_memset(void *str, int c, size_t n)
 		ptr[i] = c;
 		i++;
 	}
-	return (ptr);
+	return (str);
 }
 
 /* int main (void)
@@ -33,7 +33,7 @@ void *ft_memset(void *str, int c, size_t n)
 	printf("%s\n", str);
 	ft_memset(str,'$', 7);
 	printf("%s\n", str);
-	 memset(str,'$',7);
+	 memset(str,'$', 7);
 	printf("%s\n", str);
 	return(0);
 }  */
