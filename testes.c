@@ -16,6 +16,7 @@
 
 int main(void)
 {
-	int i = 50142;
-	printf("%s\n", ft_itoa(i));
+	int i = 2147483648;
+	/* while(i --!= -200) */
+		printf("%s\n", ft_itoa(i));
 }
