@@ -1,22 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   testes.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gmarques <gmarques@student.42lisboa.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 21:08:20 by gmarques          #+#    #+#             */
-/*   Updated: 2022/08/17 21:08:20 by gmarques         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-/* COPY FUNC TESTS DOWN BELOW */ /* testing ft_itoa.c */
+/* COPY FUNC TESTS DOWN BELOW */ /* testing ft_strmapi.c */
 
-int main(void)
+int main (void)
 {
-	int i = 2147483648;
-	/* while(i --!= -200) */
-		printf("%s\n", ft_itoa(i));
+	unsigned char a = 'Ç';
+	printf("%d\n", ft_isascii(a));
+	printf("%d\n", isascii(a));
 }

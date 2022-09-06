@@ -12,11 +12,11 @@ ARLIST = @ar -t libft.a
 CREATE_OBJECTS = @gcc -c *.c
 DELETE_MAIN = @ar -d libft.a testes.o
 all:
-		$(CC) $(CFLAGS) $(DEFAULT) $(FUNCS) $(TEST_NAME)
-		$(RUN)
+	$(CC) $(CFLAGS) $(DEFAULT) $(FUNCS) $(TEST_NAME)
+	$(RUN)
 
 clean :
-		$(CLEAN_OBJECTS)
+	$(CLEAN_OBJECTS)
 
 fclean:
 
@@ -25,7 +25,7 @@ re:
 
 
 valgrind:
-		$(VALGRIND)
+	$(VALGRIND)
 
 ar:
 	$(CREATE_OBJECTS)
@@ -35,4 +35,4 @@ ar:
 
 
 list:
-		$(ARLIST)
+	$(ARLIST)

@@ -12,20 +12,18 @@
 
 #include "libft.h"
 
-void *ft_calloc(size_t nitems, size_t size)
+void	*ft_calloc(size_t nitems, size_t size)
 {
-
-	char *ptr;
-	size_t i;
+	char	*ptr;
+	size_t	i;
 
 	i = -1;
 	ptr = malloc(size * nitems);
-	if(!ptr)
+	if (!ptr)
 		return (NULL);
-	while(i++ < size * nitems)
+	while (i++ < size * nitems)
 		ptr[i] = 0;
-	return(ptr);
-
+	return (ptr);
 }
 
 /* int main()

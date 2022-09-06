@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarques <gmarques@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/06 11:20:33 by gmarques          #+#    #+#             */
-/*   Updated: 2022/08/06 11:20:33 by gmarques         ###   ########.fr       */
+/*   Created: 2022/09/06 21:31:35 by gmarques          #+#    #+#             */
+/*   Updated: 2022/09/06 21:31:35 by gmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t i;
-	char *ptr1;
-	char *ptr2;
+	size_t	i;
+	char	*ptr1;
+	char	*ptr2;
 
-	if(!dest)
-		return(0);
+	if (!dest)
+		return (0);
 	i = 0;
 	ptr1 = dest;
 	ptr2 = (char *)src;
-	while(i < n)
+	while (i < n)
 	{
 		ptr1[i] = ptr2[i];
 		i++;
