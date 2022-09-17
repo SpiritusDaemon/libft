@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarques <gmarques@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 16:32:24 by gmarques          #+#    #+#             */
-/*   Updated: 2022/07/31 16:32:24 by gmarques         ###   ########.fr       */
+/*   Created: 2022/09/17 10:14:12 by gmarques          #+#    #+#             */
+/*   Updated: 2022/09/17 10:14:12 by gmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void ft_putchar_fd(char c, int fd)
 {
-	while (str)
-	{
-		if (*str == c)
-			return ((char*)str);
-		str++;
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }
 
 /* int main(void)
 {
-	const char str[] = "Bairromemozéfodidoirmaodalhe42brutomm";
-	const char test = 'z';
+	int fd = open("teste.txt", O_CREAT | O_WRONLY);
+	char c = 'a';
 
-	printf("%c\n", test);
-	printf("%s\n", ft_strchr(str, ((int)test)));
-	return (0);
+	ft_putchar_fd(c, fd);
+	if(fd == 3)
+		printf("success!\n");
+
+	close(fd);
 } */

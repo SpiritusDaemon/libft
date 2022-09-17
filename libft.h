@@ -19,6 +19,8 @@
  #include <string.h>
  #include <stddef.h>
  #include <ctype.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
 
 	void *ft_memset(void *str, int c, size_t n);
 	int ft_atoi(const char *str);
@@ -49,6 +51,13 @@
 	char *ft_itoa(int n);
 	char *ft_strmapi(char const *s, char (*f) (unsigned int, char));
 	int ft_isascii(int a);
+	void ft_striteri(char *s, void (*f)(unsigned int, char*));
+	void ft_putchar_fd(char c, int fd);
+	void ft_putstr_fd(char *s, int fd);
+	void ft_putendl_fd(char *s, int fd);
+	void ft_putnbr_fd(int n, int fd);
+
+
 
 
 #endif
