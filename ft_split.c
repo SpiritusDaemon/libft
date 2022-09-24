@@ -47,12 +47,13 @@ static char	*first_part(char *s, char *string_1, char c)
 		i++;
 	}
 	string_1[i] = '\0';
-	return(string_1);
+	return (string_1);
 }
 
 static char	*second_part(char *s, int i, char *string_2)
 {
 	int	j;
+
 	j = 0;
 	i += 1;
 	while (s[i])
@@ -62,21 +63,25 @@ static char	*second_part(char *s, int i, char *string_2)
 		j++;
 	}
 	string_2[j] = '\0';
-	return(string_2);
+	return (string_2);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int	i;
+	int		i;
+	char	*string_1;
+	char	*string_2;
+	char	**final;
+
 	i = char_exist((char *)s, c);
-	if (i != 1 || !s)
-		return(NULL);
 	i = limit((char *)s, c);
-	char *string_1 = malloc(i + 1 * (sizeof(char)));
-	char *string_2 = malloc(ft_strlen((char *)s) - i);
+	string_1 = malloc(i + 1 * (sizeof(char)));
+	string_2 = malloc(ft_strlen((char *)s) - i);
+	final = malloc((ft_strlen(string_1) + ft_strlen(string_2)));
 	string_1 = first_part((char *)s, string_1, c);
 	string_2 = second_part((char *)s, i, string_2);
-	char **final = malloc((ft_strlen(string_1) + ft_strlen(string_2)) * sizeof(char));
+	if (i != 1 || !s)
+		return (NULL);
 	final[0] = string_1;
 	final[1] = string_2;
 	return (final);

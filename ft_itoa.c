@@ -15,7 +15,9 @@
 static char	*max_int(int count)
 {
 	char	*t_itoa;
-	if (!(t_itoa = malloc(count + 1 * sizeof(char))))
+
+	t_itoa = malloc(count + 1 * sizeof(char));
+	if (t_itoa == NULL)
 		return (NULL);
 	t_itoa = "-2147483648";
 	return (t_itoa);
@@ -24,7 +26,9 @@ static char	*max_int(int count)
 static char	*negative_int(int count, int n)
 {
 	char	*t_itoa;
-	if (!(t_itoa = malloc(count + 2 * sizeof(char))))
+
+	t_itoa = malloc(count + 2 * sizeof(char));
+	if (t_itoa == NULL)
 		return (NULL);
 	n *= -1;
 	count += 1;
@@ -40,8 +44,10 @@ static char	*negative_int(int count, int n)
 
 static char	*positive_int(int count, int n)
 {
-	char *t_itoa;
-	if (!(t_itoa = malloc(count + 1 * sizeof(char))))
+	char	*t_itoa;
+
+	t_itoa = malloc(count + 1 * sizeof(char));
+	if (t_itoa == NULL)
 		return (NULL);
 	t_itoa[count] = '\0';
 	while (count > 0)
@@ -50,16 +56,6 @@ static char	*positive_int(int count, int n)
 		n /= 10;
 	}
 	return (t_itoa);
-}
-
-static char	*null_int(int count)
-{
-	char	*t_itoa;
-	if (!(t_itoa = malloc(2 * sizeof(char))))
-		return (NULL);
-	t_itoa[0] = '0';
-	t_itoa[1] = '\0';
-	return(t_itoa);
 }
 
 static int	count_size(int n)
@@ -82,7 +78,12 @@ char	*ft_itoa(int n)
 
 	count = count_size(n);
 	if (n == 0)
-		t_itoa = null_int(count);
+	{
+		t_itoa = malloc(2);
+		if (t_itoa == NULL)
+			return (NULL);
+		t_itoa = "0";
+	}
 	if (n > 0)
 		t_itoa = positive_int(count, n);
 	if (n < 0 && n != -2147483648)

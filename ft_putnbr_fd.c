@@ -12,7 +12,20 @@
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	write(fd, &n, 1);
 }
+
+/* int main(void)
+{
+	int fd = open("teste.txt", O_CREAT | O_WRONLY);
+	int n = 5;
+
+	ft_putnbr_fd(n, fd);
+
+	if(fd == 3)
+		printf("success!\n");
+
+	close(fd);
+} */

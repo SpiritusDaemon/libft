@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-int ft_isascii(int a)
+int	ft_isascii(int a)
 {
-	if (a < 0 || a > 127)
-		return (0);
-	return (1);
+	if (a >= 0 || a <= 127)
+		return (1);
+	return (0);
 }
 
 /* int main (void)

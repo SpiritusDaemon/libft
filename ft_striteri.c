@@ -1,6 +1,18 @@
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmarques <gmarques@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/17 11:23:56 by gmarques          #+#    #+#             */
+/*   Updated: 2022/09/17 11:23:56 by gmarques         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (s[++i])

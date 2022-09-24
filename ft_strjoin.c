@@ -17,13 +17,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*ptr;
 	int		size;
 
-	size = ft_strlen ((char*) s1) + ft_strlen ((char*) s2);
+	size = ft_strlen((char *) s1) + ft_strlen((char *) s2);
 	ptr = malloc(size + 1 * sizeof (char));
 	if (!s1 || !s2)
 		return (NULL);
 	ft_strlcpy(ptr, s1, size);
 	ft_strlcat(ptr, s2, size);
-	return(ptr);
+	return (ptr);
 }
 
 /* int main(void)

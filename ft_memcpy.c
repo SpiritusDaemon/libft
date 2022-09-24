@@ -20,14 +20,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	if (!dest)
 		return (0);
-	i = 0;
+	i = -1;
 	ptr1 = dest;
 	ptr2 = (char *)src;
-	while (i < n)
-	{
+	while (++i < n)
 		ptr1[i] = ptr2[i];
-		i++;
-	}
 	return (ptr1);
 }
 /* int main(void)
