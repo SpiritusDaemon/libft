@@ -14,7 +14,15 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	write(fd, &n, 1);
+	char	*str;
+	int		i;
+
+	i = -1;
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	str = ft_itoa(n);
+	while (str[++i])
+		write(fd, &str[i], 1);
 }
 
 /* int main(void)

@@ -12,79 +12,87 @@
 
 #include "libft.h"
 
-static int	char_exist(char *s, char c)
-{
-	int	i;
+/* Function name ft_split
+Prototype char **ft_split(char const *s, char c);
 
-	i = 0;
-	while (s[i])
+Parameters
+
+s: The string to be split. c: The delimiter character
+
+Return value
+
+The array of new strings resulting from the split.
+NULL if the allocation fails.
+
+External functs. malloc, free
+
+Description
+
+Allocates (with malloc(3)) and returns an array
+of strings obtained by splitting ’s’ using the
+character ’c’ as a delimiter. The array must end
+with a NULL pointer. */
+
+static int	word_counter(const char *s, char c)
+{
+	size_t	counter;
+
+	counter = 0;
+	while (*s)
 	{
-		if (s[i] == c)
-			return (1);
-		i++;
+		while (*s == c)
+			s++;
+		if (*s != '\0' || *s == c)
+				counter++;
+		while (*s != c && *s != '\0')
+			s++;
 	}
-	return (0);
+	return (counter);
 }
 
-static int	limit(char *s, char c)
+static char	**create_split(char *s, char c, char **split, size_t str_len)
 {
-	int	i;
+	size_t	i;
+	size_t	size;
+	size_t	count_len;
 
 	i = 0;
-	while (s[i] != c)
-		i++;
-	return (i);
-}
-
-static char	*first_part(char *s, char *string_1, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != c)
+	size = 0;
+	count_len = 0;
+	while (i <= str_len)
 	{
-		string_1[i] = s[i];
+		if (s[i] == c || !s[i])
+		{
+			if (count_len > 0)
+			{
+				split[size] = malloc((count_len + 1) * sizeof(char));
+				if (split[size] != NULL)
+					ft_strlcpy(split[size], &s[i - count_len], count_len + 1);
+				count_len = 0;
+				size++;
+			}
+		}
+		else
+			count_len++;
 		i++;
 	}
-	string_1[i] = '\0';
-	return (string_1);
-}
-
-static char	*second_part(char *s, int i, char *string_2)
-{
-	int	j;
-
-	j = 0;
-	i += 1;
-	while (s[i])
-	{
-		string_2[j] = s[i];
-		i++;
-		j++;
-	}
-	string_2[j] = '\0';
-	return (string_2);
+	return (split);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	char	*string_1;
-	char	*string_2;
-	char	**final;
+	int		size;
+	char	**split;
+	size_t	str_len;
 
-	i = char_exist((char *)s, c);
-	i = limit((char *)s, c);
-	string_1 = malloc(i + 1 * (sizeof(char)));
-	string_2 = malloc(ft_strlen((char *)s) - i);
-	final = malloc((ft_strlen(string_1) + ft_strlen(string_2)));
-	string_1 = first_part((char *)s, string_1, c);
-	string_2 = second_part((char *)s, i, string_2);
-	if (i != 1 || !s)
+	size = word_counter (s, c);
+	split = malloc((size + 1) * sizeof(char *));
+	if (split == NULL)
 		return (NULL);
-	final[0] = string_1;
-	final[1] = string_2;
-	return (final);
+	str_len = ft_strlen((char *)s);
+	split = create_split((char *)s, c, split, str_len);
+	split[size] = NULL;
+	return (split);
 }
 
 /* int main(void)

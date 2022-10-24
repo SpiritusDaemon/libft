@@ -15,14 +15,21 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ptr;
-	int		size;
+	size_t	size;
+	size_t	i;
+	size_t	j;
 
 	size = ft_strlen((char *) s1) + ft_strlen((char *) s2);
 	ptr = malloc(size + 1 * sizeof (char));
+	i = -1;
+	j = -1;
 	if (!s1 || !s2)
 		return (NULL);
-	ft_strlcpy(ptr, s1, size);
-	ft_strlcat(ptr, s2, size);
+	while (s1[++i])
+		ptr[i] = s1[i];
+	while (s2[++j])
+		ptr[i++] = s2[j];
+	ptr[i] = '\0';
 	return (ptr);
 }
 

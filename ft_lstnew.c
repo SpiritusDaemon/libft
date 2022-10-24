@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarques <gmarques@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 22:58:20 by gmarques          #+#    #+#             */
-/*   Updated: 2022/09/06 22:58:20 by gmarques         ###   ########.fr       */
+/*   Created: 2022/10/20 19:43:36 by gmarques          #+#    #+#             */
+/*   Updated: 2022/10/20 19:43:36 by gmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int a)
+t_list *ft_lstnew(void *content)
 {
-	if (a >= 0 && a <= 127)
-		return (1);
-	return (0);
+	t_list *teste;
+
+	teste = malloc(sizeof(t_list));
+	if(!teste)
+		return (NULL);
+	teste -> content = content;
+	teste -> next = NULL;
+		return (teste);
 }
 
-/* int main (void)
+/* int main(void)
 {
-	unsigned char a = 'a';
-	printf("%d\n", ft_isascii(a));
-	printf("%d\n", isascii(a));
-}
- */
+
+	char str[] = "teste123teste";
+
+	t_list *teste;
+	teste = ft_lstnew((void *)str);
+	printf("\n%s\n", (char *)teste->content);
+} */

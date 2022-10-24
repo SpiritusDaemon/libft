@@ -37,7 +37,12 @@ FUNCS =	ft_isalpha.c \
 
 CC = gcc
 OBJ = $(FUNCS:.c=.o)
-FLAGS = -Wall \
+B_OBJ = $(BONUS:.c=.o)
+
+BONUS = ft_lstnew.c \
+		ft_lstadd_front.c \
+
+FLAGS =	-Wall \
 		-Wextra \
 		-Werror \
 
@@ -46,11 +51,23 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar -rcs $@ $^
 
-run: $(OBJ)
+run: $(OBJ) $(B_OBJ)
 	$(CC) $(FLAGS) $(TEST_FILE) $(NAME) -o main
-	@./main
+	./main
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(B_OBJ)
 
-.PHONY: all clean run
+fclean: clean
+	rm -rf $(NAME)
+	rm -rf main
+
+re:
+	rm -rf $(NAME)
+	make $(NAME)
+	make clean
+
+bonus:$(NAME) $(B_OBJ)
+		ar -rcs $@ $^
+
+.PHONY: all clean run re fclean bonus
