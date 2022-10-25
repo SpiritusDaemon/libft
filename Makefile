@@ -41,6 +41,7 @@ B_OBJ = $(BONUS:.c=.o)
 
 BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
+		ft_lstsize.c \
 
 FLAGS =	-Wall \
 		-Wextra \
