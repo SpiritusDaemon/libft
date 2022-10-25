@@ -69,6 +69,6 @@ re:
 	make clean
 
 bonus:$(NAME) $(B_OBJ)
-		ar -rcs $@ $^
+		ar -rcs $^
 
 .PHONY: all clean run re fclean bonus
