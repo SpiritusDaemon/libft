@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (lst)
@@ -25,7 +25,7 @@ int ft_lstsize(t_list *lst)
 	return (i);
 }
 
-int main(void)
+/* int main(void)
 {
 	t_list *teste = NULL;
 	int i;
@@ -34,10 +34,10 @@ int main(void)
 	teste->next = malloc(sizeof(t_list));
 	teste ->next->content = "cdef";
 	teste->next->next = malloc(sizeof(t_list));
-	teste ->next->next ->content = "xzy";
+	teste ->next->next->content = "xzy";
 	teste->next->next->next = malloc(sizeof(t_list));
 	teste ->next->next->next->content = "xzy";
 	teste->next->next->next->next = NULL;
 	i = ft_lstsize(teste);
 	printf("%d\n", i);
-}
+} */

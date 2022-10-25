@@ -1,5 +1,4 @@
 NAME = libft.a
-TEST_FILE = testes.c
 FUNCS =	ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
@@ -53,7 +52,7 @@ $(NAME): $(OBJ)
 	ar -rcs $@ $^
 
 run: $(OBJ) $(B_OBJ)
-	$(CC) $(FLAGS) $(TEST_FILE) $(NAME) -o main
+	$(CC) $(FLAGS) $(NAME) $(OBJ) $(B_OBJ) -o main
 	./main
 
 clean:
