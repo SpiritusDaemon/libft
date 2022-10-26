@@ -41,6 +41,8 @@ B_OBJ = $(BONUS:.c=.o)
 BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
 
 FLAGS =	-Wall \
 		-Wextra \
@@ -52,7 +54,7 @@ $(NAME): $(OBJ)
 	ar -rcs $@ $^
 
 run: $(OBJ) $(B_OBJ)
-	$(CC) $(FLAGS) $(NAME) $(OBJ) $(B_OBJ) -o main
+	$(CC) $(FLAGS) $(NAME) -o main
 	./main
 
 clean:
