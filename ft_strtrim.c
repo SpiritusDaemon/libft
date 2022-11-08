@@ -16,14 +16,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t		start;
 	size_t		end;
-	char 		*str;
+	char		*str;
 
 	str = NULL;
 	if (s1 != NULL && set != NULL)
 	{
 		start = 0;
 		end = ft_strlen((char *)s1);
-
 		while (s1[start] && ft_strchr(set, s1[start]) != NULL)
 			start++;
 		while (s1[end - 1] && ft_strchr(set, s1[end - 1]) != NULL)
